@@ -1,0 +1,65 @@
+@keyframes circles {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  20% {
+    transform: translate(-50%, -50%) scale(1.5);
+  }
+  30% {
+    transform: translate(-50%, -50%) scale(0.8);
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.9);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.hello {
+  position: relative;
+  z-index: 0;
+  &__logo {
+    position: relative;
+    z-index: 2020;
+  }
+  &__circles {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    will-change: transform;
+    width: 220px;
+    height: 220px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    animation: circles 20s ease-in infinite;
+    &::after {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      will-change: transform;
+      width: 220px;
+      height: 220px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      content: "";
+      display: block;
+      z-index: 1;
+      animation: circles 17s ease-out infinite;
+    }
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      will-change: transform;
+      width: 220px;
+      height: 220px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 50%;
+      content: "";
+      display: block;
+      z-index: 1;
+      animation: circles 20s ease-in infinite;
+    }
+  }
+}
