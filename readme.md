@@ -11,6 +11,8 @@ Click on `Use this template` button to generate a new repository based on this s
 ## Available scripts
 
 `npm run start` - runs development mode
+
 `npm run build` - runs build process for production
+
 `npm run publish` - runs build process and publish the page using `gh-pages` branch
 
