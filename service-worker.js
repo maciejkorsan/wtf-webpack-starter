@@ -2,11 +2,7 @@ var VERSION = '24';
 
 this.addEventListener('install', function(e) {
   e.waitUntil(caches.open(VERSION).then(cache => {
-    return cache.addAll([
-      '/',
-      '/index.html',
-      '/service-worker.js',
-    ]);
+    return cache.addAll([]);
   }))
 });
 
