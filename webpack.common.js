@@ -26,6 +26,22 @@ module.exports = {
       {
         test: /\.html$/i,
         loader: "html-loader",
+        options: {
+          attributes: {
+            list: [
+              {
+                tag: "img",
+                attribute: "src",
+                type: "src",
+              },
+              {
+                tag: "img",
+                attribute: "data-gallery-src",
+                type: "src",
+              },
+            ],
+          },
+        },
       },
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
@@ -47,7 +63,16 @@ module.exports = {
 
   plugins: [
     new CopyWebpackPlugin({
-      patterns: [{ from: "public" }],
+      patterns: [
+        {
+          from: "public",
+          globOptions: {
+            ignore: [
+              '**/*.DS_Store'
+            ],
+          },
+        },
+      ],
     }),
 
     /* here you can define another html file and its dependencies */
